@@ -32,7 +32,7 @@ const Search = () => {
                         px-6
                         "
                 >
-                    About
+                    Anywhere
                 </div>
                 <div
                     className="

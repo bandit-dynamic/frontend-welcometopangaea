@@ -5,7 +5,7 @@ import Navbar from "./components/navbar/Navbar";
 
 export const metadata = {
   title: 'Pangaea Land Group, Inc.',
-  description: 'Test-App',
+  description: 'Land Acquisitions and Sales',
 }
 
 const font = Nunito({

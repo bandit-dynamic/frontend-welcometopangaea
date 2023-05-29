@@ -24,7 +24,6 @@ const UserMenu = () => {
                     font-semibold
                     px-4
                     py-3
-                    rounded-full
                     hover:bg-neutral-100
                     transition
                     cursor-pointer
@@ -43,8 +42,7 @@ const UserMenu = () => {
                 flex
                 flex-row
                 items-center
-                gap-3
-                rounded-full
+                gap-3             
                 cursor-pointer
                 hover:shadow-md
                 transition

@@ -2,7 +2,7 @@
 
 import axios from 'axios';
 import { AiFillFacebook } from 'react-icons/ai';
-import { SiZillow } from 'react-icons/si';
+import { BsFacebook } from 'react-icons/bs';
 import { FcGoogle } from 'react-icons/fc';
 import { useCallback, useState } from 'react';
 import {
@@ -98,8 +98,8 @@ const RegisterModal = () => {
                 />
                 <Button
                     outline
-                    label="Continue with Zillow"
-                    icon={SiZillow}
+                    label="Continue with Facebook"
+                    icon={BsFacebook}
                     onClick={() => {}}
                 />
                 <div

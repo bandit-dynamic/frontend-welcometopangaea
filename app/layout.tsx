@@ -7,6 +7,7 @@ import Navbar from "./components/navbar/Navbar";
 import RegisterModal from "@/app/components/modals/registerModal";
 import LoginModal from "@/app/components/modals/loginModal";
 import ToasterProvider from "@/app/providers/ToasterProvider";
+import getCurrentUser from "./actions/getCurrentUser";
 
 
 export const metadata = {
@@ -18,11 +19,12 @@ const font = Nunito({
   subsets: ['latin'],
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const currentUser = await getCurrentUser();
   return (
     <html lang="en">
       <body className={font.className}>
@@ -31,7 +33,7 @@ export default function RootLayout({
           <ToasterProvider />
           <LoginModal />
           <RegisterModal />
-          <Navbar />
+          <Navbar currentUser={currentUser} />
         {/* </ClientOnly> */}
         {children}
       </body>

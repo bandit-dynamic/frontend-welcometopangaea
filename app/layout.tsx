@@ -5,6 +5,7 @@ import Navbar from "./components/navbar/Navbar";
 // import ClientOnly from "./components/ClientOnly";
 // import Modal from "./components/modals/Modal";
 import RegisterModal from "./components/modals/registerModal";
+import ToasterProvider from "./providers/ToasterProvider";
 
 export const metadata = {
   title: 'Pangaea Land Group, Inc.',
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className={font.className}>
         {/* <ClientOnly> */}
           {/* <Modal actionLabel="Submit" title="Welcome to Pangaea Land Group!" isOpen /> */}
+          <ToasterProvider />
           <RegisterModal />
           <Navbar />
         {/* </ClientOnly> */}

@@ -4,8 +4,10 @@ import './globals.css'
 import Navbar from "./components/navbar/Navbar";
 // import ClientOnly from "./components/ClientOnly";
 // import Modal from "./components/modals/Modal";
-import RegisterModal from "./components/modals/registerModal";
-import ToasterProvider from "./providers/ToasterProvider";
+import RegisterModal from "@/app/components/modals/registerModal";
+import LoginModal from "@/app/components/modals/loginModal";
+import ToasterProvider from "@/app/providers/ToasterProvider";
+
 
 export const metadata = {
   title: 'Pangaea Land Group, Inc.',
@@ -27,6 +29,7 @@ export default function RootLayout({
         {/* <ClientOnly> */}
           {/* <Modal actionLabel="Submit" title="Welcome to Pangaea Land Group!" isOpen /> */}
           <ToasterProvider />
+          <LoginModal />
           <RegisterModal />
           <Navbar />
         {/* </ClientOnly> */}

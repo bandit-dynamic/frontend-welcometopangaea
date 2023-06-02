@@ -2,11 +2,14 @@
 
 import Container from "../Container";
 import CategoryBox from "../CategoryBox"
+import { usePathname, useSearchParams } from "next/navigation"
 
+import { 
+    GiEarthAmerica, 
+    GiHighGrass, 
+    GiFarmTractor 
+} from 'react-icons/gi';
 import { TbMountain } from 'react-icons/tb';
-import { GiEarthAmerica } from 'react-icons/gi';
-import { GiHighGrass } from 'react-icons/gi';
-import { GiFarmTractor } from 'react-icons/gi';
 import { MdFlood } from 'react-icons/md';
 import { BsFillHouseCheckFill } from 'react-icons/bs';
 import { BiBuildingHouse } from 'react-icons/bi';
@@ -52,29 +55,39 @@ export const categories = [
   ]
   
 
-const Categories = () => {
+  const Categories = () => {
+    const params = useSearchParams();
+    const category = params?.get('category');
+    const pathname = usePathname();
+    const isMainPage = pathname === '/';
+  
+    if (!isMainPage) {
+      return null;
+    }
+  
     return (
-        <Container>
-            <div
-                className="
-                    pt-4
-                    flex
-                    flex-row
-                    items-center
-                    justify-between
-                    overflow-x-auto
-                "
-            >
-                {categories.map((item) => (
-                    <CategoryBox 
-                        key={item.label}
-                        label={item.label}
-                        icon={item.icon}
-                    />
-                ))}
-            </div>
-        </Container>
+      <Container>
+        <div
+          className="
+            pt-4
+            flex 
+            flex-row 
+            items-center 
+            justify-between
+            overflow-x-auto
+          "
+        >
+          {categories.map((item) => (
+            <CategoryBox 
+              key={item.label}
+              label={item.label}
+              icon={item.icon}
+              selected={category === item.label}
+            />
+          ))}
+        </div>
+      </Container>
     );
-}
- 
-export default Categories;
+  }
+   
+  export default Categories;

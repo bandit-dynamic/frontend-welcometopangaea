@@ -7,6 +7,8 @@ import MenuItem from './MenuItem';
 
 import useRegisterModal from '@/app/hooks/useRegisterModal';
 import useLoginModal from '@/app/hooks/useLoginModal';
+import useSellModal from '@/app/hooks/useSellModal';
+
 import { signOut } from 'next-auth/react';
 import { SafeUser } from '@/app/types';
 
@@ -19,17 +21,27 @@ const UserMenu: React.FC<UserMenuProps>= ({
 }) => {
     const registerModal = useRegisterModal();
     const loginModal = useLoginModal();
+    const sellModal = useSellModal();
+
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleOpen = useCallback(() => {
         setIsOpen((value) => !value);
     }, []);
     
+    const onSell = useCallback(() => {
+        if (!currentUser) {
+            return loginModal.onOpen();
+        }
+
+        sellModal.onOpen();
+    }, [currentUser, loginModal, sellModal]);
+
     return (
         <div className="relative">
             <div className="flex flex-row items-center gap-3">
                 <div
-                    onClick={() => { }}
+                    onClick={onSell}
                     className="
                     hidden
                     md:block
@@ -42,7 +54,7 @@ const UserMenu: React.FC<UserMenuProps>= ({
                     cursor-pointer
                     "
                 >
-                    Your Home
+                    List your property!
                 </div> 
                 <div
                 onClick={toggleOpen}
@@ -94,6 +106,10 @@ const UserMenu: React.FC<UserMenuProps>= ({
                             <MenuItem 
                                 onClick={() => {}}
                                 label="My Favorites"
+                            />
+                            <MenuItem 
+                                onClick={sellModal.onOpen}
+                                label="List My property"
                             />
                             <hr />
                             <MenuItem 

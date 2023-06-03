@@ -10,6 +10,7 @@ import Modal from "./Modal";
 import Heading from '../Heading';
 import { categories } from "../navbar/Categories";
 import CategoryInput from "../inputs/CategoryInput";
+import CountrySelect from "../inputs/CountrySelect"
 
 
 enum STEPS {
@@ -112,11 +113,23 @@ const SellModal = () => {
                 </div>
             )
 
+            if (step === STEPS.LOCATION) {
+                bodyContent = (
+                    <div className="flex flex-col gap-8">
+                        <Heading
+                            title="Where is your property located?"
+                            subtitle="Help buyers find you!"
+                        />
+                        <CountrySelect />
+                    </div>
+                )
+            }
+
     return ( 
         <Modal 
         isOpen={sellModal.isOpen}
         onClose={sellModal.onClose}
-        onSubmit={sellModal.onClose}
+        onSubmit={onNext}
         actionLabel={actionLabel}
         secondaryActionLabel={secondaryActionLabel}
         secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}

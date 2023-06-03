@@ -1,9 +1,14 @@
 'use client';
 
-import useSellModal from "@/app/hooks/useSellModal";
 import { useMemo, useState } from "react"
+
+import useSellModal from "@/app/hooks/useSellModal";
+
 import Modal from "./Modal";
 import Heading from '../Heading';
+import { categories } from "../navbar/Categories";
+import CategoryInput from "../inputs/CategoryInput";
+
 
 enum STEPS {
     CATEGORY = 0,
@@ -35,6 +40,14 @@ const SellModal = () => {
         return 'Next';
     }, [step]);
 
+    const secondaryActionLabel = useMemo (() => {
+        if (step === STEPS.CATEGORY) {
+            return undefined
+        }
+
+        return 'Back'
+    }, [step]);
+
     let bodyContent = (
         <div className="flex flex-col gap-8">
             <Heading
@@ -51,17 +64,20 @@ const SellModal = () => {
                     overflow-y-auto
                 "
             >
-                
-            </div>
-        </div>
-    )
+                {categories.map ((item) => (
+                    <div key={item.label} className="col-span-1">
+                        <CategoryInput
+                            onClick={() => {}}
+                            selected={false}
+                            label={item.label}
+                            icon={item.icon}
+                        />
 
-    const secondaryActionLabel = useMemo(() => {
-        if (step === STEPS.CATEGORY) {
-            return undefined;
-        }
-
-    }, [step]);
+                    </div>
+                        ))}
+                    </div>
+                </div>
+            )
 
     return ( 
         <Modal 

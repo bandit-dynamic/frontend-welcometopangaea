@@ -54,7 +54,7 @@ const SellModal = () => {
             acreageCount: 1,
             imageSrc: '',
             price: 1,
-            titel: '',
+            title: '',
             description: ''
         }
     });
@@ -214,8 +214,8 @@ let bodyContent = (
                     subtitle="Don't forget to add nearby attractions, land rights, and disclosures"
                 />
                 <Input 
-                    id="headline"
-                    label="Headline:"
+                    id="title"
+                    label="Title:"
                     disabled={isLoading}
                     register={register}
                     errors={errors}

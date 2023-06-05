@@ -2,7 +2,7 @@ import { Nunito } from "next/font/google";
 
 import './globals.css'
 import Navbar from "./components/navbar/Navbar";
-// import ClientOnly from "./components/ClientOnly";
+import ClientOnly from "./components/ClientOnly";
 // import Modal from "./components/modals/Modal";
 
 import SellModal from "./components/modals/SellModal";
@@ -31,15 +31,16 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        {/* <ClientOnly> */}
-          {/* <Modal actionLabel="Submit" title="Welcome to Pangaea Land Group!" isOpen /> */}
+        <ClientOnly>
           <ToasterProvider />
-          <SellModal />
           <LoginModal />
           <RegisterModal />
+          <SellModal />
           <Navbar currentUser={currentUser} />
-        {/* </ClientOnly> */}
-        {children}
+        </ClientOnly>
+        <div className="pb-20 pt-28">
+          {children}
+        </div>
       </body>
     </html>
   )

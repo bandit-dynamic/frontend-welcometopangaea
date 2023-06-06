@@ -23,7 +23,7 @@ model User {
 
   accounts Account[]
   listings Listing[]
-  reservations Reservation[]
+  inquiries Inquiry[]
 }
 
 model Account {
@@ -58,16 +58,16 @@ model Listing {
   price Int?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-  reservations Reservation[]
+  inquiries Inquiry[]
 }
 
-model Reservation {
+model Inquiry {
   id String @id @default(auto()) @map("_id") @db.ObjectId
   userId String @db.ObjectId
   listingId String @db.ObjectId  
-  startDate DateTime
-  endDate DateTime
-  totalPrice Int
+  offerStartDate DateTime?
+  offerThruDate DateTime?
+  proposedPrice Int?
   createdAt DateTime @default(now())
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)

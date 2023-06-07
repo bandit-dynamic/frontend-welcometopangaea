@@ -7,7 +7,7 @@ export type SafeListing = Omit<
     createdAt: string;
 }
 
-export type SafeReservation = Omit<
+export type SafeInquiry = Omit<
   Inquiry, 
   "createdAt" | "offerStartDate" | "offerThruDate" | "listing"
 > & {

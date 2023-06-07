@@ -77,7 +77,7 @@ locationValue
                 {description}
             </div>
             <hr />
-            <Map center={coordinates} />
+            <Map center={coordinates} />npm
         </div>
     );
 }

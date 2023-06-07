@@ -12,8 +12,8 @@ export type SafeInquiry = Omit<
   "createdAt" | "offerStartDate" | "offerThruDate" | "listing"
 > & {
   createdAt: string;
-  startDate: string;
-  endDate: string;
+  offerStartDate: string;
+  offerThruDate: string;
   listing: SafeListing;
 };
 

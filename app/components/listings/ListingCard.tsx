@@ -38,7 +38,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
   const router = useRouter();
   const { getByValue } = useCountries();
 
-  const location = getByValue(data.locationValue);
+  // const location = getByValue(data.locationValue);
 
   const handleCancel = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -64,8 +64,8 @@ const ListingCard: React.FC<ListingCardProps> = ({
       return null;
     }
   
-    const start = new Date(inquiry.startDate);
-    const end = new Date(inquiry.endDate);
+    const start = new Date(inquiry.offerStartDate);
+    const end = new Date(inquiry.offerThruDate);
 
     return `${format(start, 'PP')} - ${format(end, 'PP')}`;
   }, [inquiry]);
@@ -108,9 +108,9 @@ const ListingCard: React.FC<ListingCardProps> = ({
             /> */}
           </div>
         </div>
-        <div className="font-semibold text-lg">
+        {/* <div className="font-semibold text-lg">
           {location?.region}, {location?.label}
-        </div>
+        </div> */}
         <div className="font-light text-neutral-500">
           {inquiryDate || data.category}
         </div>

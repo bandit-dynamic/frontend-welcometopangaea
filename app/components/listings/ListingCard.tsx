@@ -8,7 +8,7 @@ import { format } from 'date-fns';
 import useCountries from "@/app/hooks/useCountries";
 import { 
   SafeListing, 
-  // SafeInquiry, 
+  SafeInquiry, 
   SafeUser 
 } from "@/app/types";
 
@@ -64,8 +64,8 @@ const ListingCard: React.FC<ListingCardProps> = ({
       return null;
     }
   
-    const start = new Date(inquiry.startOfferDate);
-    const end = new Date(inquiry.endOfferDate);
+    const start = new Date(inquiry.startDate);
+    const end = new Date(inquiry.endDate);
 
     return `${format(start, 'PP')} - ${format(end, 'PP')}`;
   }, [inquiry]);
@@ -119,7 +119,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
             $ {price}
           </div>
           {!inquiry && (
-            <div className="font-light"></div>
+            <div className="font-light">night</div>
           )}
         </div>
         {onAction && actionLabel && (

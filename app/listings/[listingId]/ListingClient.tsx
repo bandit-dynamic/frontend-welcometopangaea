@@ -33,11 +33,10 @@ const ListingClient: React.FC<ListingClientProps> = ({
             <div className="max-w-screen-lg mx-auto">
                 <div className="flex flex-col gap-6">
                     <ListingHead 
-                        title={listing.title}
-                        imageSrc={listing.imageSrc ||'/default-image.jpg'}
+                        title={listing.title || 'Default Title'}
+                        imageSrc={listing.imageSrc || '/default-image.jpg'}
                         id={listing.id}
-                        currentUser={currentUser}
-                    />
+                        currentUser={currentUser} locationValue={""}                    />
                     <div className="
                         grid
                         grid-cols-1
@@ -48,9 +47,8 @@ const ListingClient: React.FC<ListingClientProps> = ({
                         <ListingInfo
                             user={listing.user}
                             category={category}
-                            acreageCount={listing.acreageCount}
-                            locationValue={listing.locationValue}
-                        />
+                            acreageCount={listing.acreageCount || 0}
+                            locationValue={listing.locationValue || 'N/A'} description={""}                        />
                     </div>
                 </div>
 

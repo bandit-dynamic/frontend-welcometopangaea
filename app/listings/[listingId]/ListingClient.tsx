@@ -3,7 +3,7 @@
 
 import { Inquiry } from "@prisma/client";
 
-import { SafeListing } from "@/app/types";
+import { SafeListing, SafeInquiry, SafeUser } from "@/app/types";
 import { useMemo } from "react"
 import { categories } from "@/app/components/navbar/Categories";
 import Container from "@/app/components/Container";
@@ -34,7 +34,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
                 <div className="flex flex-col gap-6">
                     <ListingHead 
                         title={listing.title}
-                        imageSrc={listing.imageSrc}
+                        imageSrc={listing.imageSrc ||'/default-image.jpg'}
                         id={listing.id}
                         currentUser={currentUser}
                     />

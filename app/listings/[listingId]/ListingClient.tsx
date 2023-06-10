@@ -1,7 +1,5 @@
 'use client';
 
-import { eachDayOfInterval } from "date-fns";
-import { useRouter } from "next/navigation";
 import { Inquiry } from "@prisma/client";
 
 import { SafeListing, SafeInquiry, SafeUser } from "@/app/types";
@@ -11,13 +9,8 @@ import Container from "@/app/components/Container";
 import ListingHead from "@/app/components/listings/ListingHead";
 import ListingInfo from "@/app/components/listings/ListingInfo";
 
-import useLoginModal from "@/app/hooks/useLoginModal";
 
-const initialDateRange = {
-    offerStartDate: new Date(),
-    offerThruDate: new Date(),
-    key: 'selection'
-};
+
 
 interface ListingClientProps {
     inquiries?: Inquiry[]
@@ -29,28 +22,10 @@ interface ListingClientProps {
 
 const ListingClient: React.FC<ListingClientProps> = ({
     listing,
-    inquiries = [],
     currentUser
 }) => {
-    const loginModal = useLoginModal();
-    const router = useRouter();
 
-    const disabledDates = useMemo (() => {
-        let dates: Date[] = [];
-
-        inquiries.forEach((inquiry) => {
-            if (inquiry.offerStartDate && inquiry.offerThruDate) {
-            const range = eachDayOfInterval({
-                start: new Date(inquiry.offerStartDate),
-                end: new Date(inquiry.offerThruDate)
-            });
-
-            dates = [...dates, ...range];
-            }
-        })
-
-        return dates;
-    }, [inquiries])
+    
 
 
     const category = useMemo(() => {

@@ -1,4 +1,4 @@
-'user client';
+'use client';
 
 import useCountries from "@/app/hooks/useCountries";
 import { SafeUser } from "@/app/types";
@@ -83,3 +83,4 @@ locationValue
 }
 
 export default ListingInfo;
+

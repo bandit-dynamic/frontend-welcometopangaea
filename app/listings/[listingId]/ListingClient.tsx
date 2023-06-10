@@ -35,20 +35,20 @@ const ListingClient: React.FC<ListingClientProps> = ({
     const loginModal = useLoginModal();
     const router = useRouter();
 
-    const disabledDates = useMemo (() => {
-        let dates: Date[] = [];
+    // const disabledDates = useMemo (() => {
+    //     let dates: Date[] = [];
 
-        inquiries.forEach((inquiry) => {
-            const range = eachDayOfInterval({
-                start: new Date(inquiry.offerStartDate),
-                end: new Date(inquiry.offerThruDate)
-            });
+    //     inquiries.forEach((inquiry) => {
+    //         const range = eachDayOfInterval({
+    //             start: new Date(inquiry.offerStartDate),
+    //             end: new Date(inquiry.offerThruDate)
+    //         });
 
-            dates = [...dates, ...range];
-        })
+    //         dates = [...dates, ...range];
+    //     })
 
-        return dates;
-    }, [inquiries])
+    //     return dates;
+    // }, [inquiries])
 
 
     const category = useMemo(() => {

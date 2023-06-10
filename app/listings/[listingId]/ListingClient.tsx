@@ -39,12 +39,14 @@ const ListingClient: React.FC<ListingClientProps> = ({
         let dates: Date[] = [];
 
         inquiries.forEach((inquiry) => {
+            if (inquiry.offerStartDate && inquiry.offerThruDate) {
             const range = eachDayOfInterval({
                 start: new Date(inquiry.offerStartDate),
                 end: new Date(inquiry.offerThruDate)
             });
 
             dates = [...dates, ...range];
+            }
         })
 
         return dates;

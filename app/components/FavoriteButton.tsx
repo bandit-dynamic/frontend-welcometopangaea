@@ -1,7 +1,8 @@
 'use client';
 
-import { SafeUser } from "..@/app/types";
+import { SafeUser } from "@/app/types";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
+import useFavorite from "@/app/hooks/useFavorite";
 
 interface FavoriteButtonProps {
     listingId: string;
@@ -13,8 +14,7 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({
     listingId,
     currentUser
 }) => {
-    const hasFavorited = false;
-    const toggleFavorite = () => {};
+    const { hasFavorited, toggleFavorite } = useFavorite({listingId, currentUser});
 
     return ( 
         <div

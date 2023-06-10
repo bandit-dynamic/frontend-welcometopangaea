@@ -1,6 +1,6 @@
 'use client';
 
-import { eachDayOfInterval } from "date-fns";
+// import { eachDayOfInterval } from "date-fns";
 import { useRouter } from "next/navigation";
 import { Inquiry } from "@prisma/client";
 
@@ -13,11 +13,11 @@ import ListingInfo from "@/app/components/listings/ListingInfo";
 
 import useLoginModal from "@/app/hooks/useLoginModal";
 
-const initialDateRange = {
-    offerStartDate: new Date(),
-    offerThruDate: new Date(),
-    key: 'selection'
-};
+// const initialDateRange = {
+//     offerStartDate: new Date(),
+//     offerThruDate: new Date(),
+//     key: 'selection'
+// };
 
 interface ListingClientProps {
     inquiries?: Inquiry[]

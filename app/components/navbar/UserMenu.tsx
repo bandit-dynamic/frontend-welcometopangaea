@@ -4,6 +4,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import Avatar from '../Avatar';
 import { useCallback, useState } from 'react';
 import MenuItem from './MenuItem';
+import { useRouter } from "next/navigation";
 
 import useRegisterModal from '@/app/hooks/useRegisterModal';
 import useLoginModal from '@/app/hooks/useLoginModal';
@@ -19,6 +20,8 @@ interface UserMenuProps {
 const UserMenu: React.FC<UserMenuProps>= ({
     currentUser
 }) => {
+    const router = useRouter();
+    
     const registerModal = useRegisterModal();
     const loginModal = useLoginModal();
     const sellModal = useSellModal();
@@ -100,7 +103,7 @@ const UserMenu: React.FC<UserMenuProps>= ({
                         {currentUser ? (
                             <>
                             <MenuItem 
-                                onClick={() => {}}
+                                onClick={() => router.push('/properties')}
                                 label="Properties"
                             />
                             <MenuItem 

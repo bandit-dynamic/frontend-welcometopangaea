@@ -69,7 +69,7 @@ locationValue
                 <ListingCategory
                 icon={category.icon}
                 label={category?.label}
-                description={category?.description}
+                description={category.description}
                 />
             )}
             <hr />
@@ -77,7 +77,7 @@ locationValue
                 {description}
             </div>
             <hr />
-            <Map center={coordinates} />npm
+            <Map center={coordinates} />
         </div>
     );
 }

@@ -12,7 +12,7 @@ import {
   SafeUser 
 } from "@/app/types";
 
-// import HeartButton from "../HeartButton";
+import FavoriteButton from "../FavoriteButton";
 import Button from "../Button";
 import ClientOnly from "../ClientOnly";
 
@@ -102,15 +102,15 @@ const ListingCard: React.FC<ListingCardProps> = ({
             top-3
             right-3
           ">
-            {/* <HeartButton 
+            <FavoriteButton 
               listingId={data.id} 
               currentUser={currentUser}
-            /> */}
+            />
           </div>
         </div>
-        {/* <div className="font-semibold text-lg">
+        <div className="font-semibold text-lg">
           {location?.region}, {location?.label}
-        </div> */}
+        </div>
         <div className="font-light text-neutral-500">
           {inquiryDate || data.category}
         </div>
@@ -119,7 +119,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
             $ {price}
           </div>
           {!inquiry && (
-            <div className="font-light">night</div>
+            <div className="font-light"> current price</div>
           )}
         </div>
         {onAction && actionLabel && (
@@ -129,6 +129,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
             label={actionLabel} 
             onClick={handleCancel}
           />
+
         )}
       </div>
     </div>

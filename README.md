@@ -1,4 +1,4 @@
-## "Welcome to Pangaea!"
+# "Welcome to Pangaea!"
 
 Link to deployed application: https://pangaealandgroupinc.vercel.app/
 
@@ -18,7 +18,7 @@ We help owners who have inherited an unwanted property and vacant land, are behi
 
 We can plug you into our network of hundreds of land investors, multiplying the likelihood of getting your land recognized and sold with no extra hassle to you!
 
-# Technologies used:
+## Technologies used:
 Full Stack:
 - tsx, ts, jsx
 - Mongoose

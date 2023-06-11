@@ -20,6 +20,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 # Technologies used:
 Full Stack:
+- tsx, ts, jsx
 - Mongoose
 - Prisma
 - Next.js

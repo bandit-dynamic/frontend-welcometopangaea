@@ -24,8 +24,11 @@ Full Stack:
 - Prisma
 - Next.js
 - Node.js
-- Axios
+- NextAuth
+- Google Developer Console
 - Bcrypt
+- Axios
+- Cloudinary API
 - Tailwind for styling
 - Vercel for deployment
 <br />
